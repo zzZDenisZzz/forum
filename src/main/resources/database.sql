@@ -23,7 +23,7 @@ create table user_roles (
 );
 
 -- Insert data
-insert into users values (1,'zzZDenysZzz','qweasdzxc');
+insert into users values (1,'zzZDenysZzz','$2a$04$CcToOb6c9cFN2gRZ8V2e2.1KpmqTTY8rqJEAERIRtL5xpWCm2amuG');
 
 insert into roles values(1,'ROLE_USER');
 insert into roles values (2,'ROLE_ADMIN');
