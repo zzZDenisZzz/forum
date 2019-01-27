@@ -2,13 +2,13 @@
 create table users (
  id serial primary key,
  username text not null,
- password char(50)
+ password char(255)
 );
 
 -- Table: roles
 create table roles (
   id serial primary key,
-  name char(100)
+  name char(255)
 );
 
 -- Table for mapping user and roles: user_roles
