@@ -16,21 +16,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
+@Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserDao userDao;
 
-    @Transactional(readOnly = true)
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.findByUsername(username);
 
-        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        Set<GrantedAuthority> roles = new HashSet<>();
+        roles.add(new SimpleGrantedAuthority(Role.USER.name()));
 
-        for (Role role:user.getRoles()){
-            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
         return new org.springframework.security.core.userdetails
-                .User(user.getUsername(),user.getPassword(),grantedAuthorities);
+                .User(user.getUsername(), user.getPassword(), roles);
     }
 }
