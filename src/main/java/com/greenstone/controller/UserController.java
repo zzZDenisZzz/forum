@@ -5,16 +5,18 @@ import com.greenstone.service.SecurityService;
 import com.greenstone.service.UserService;
 import com.greenstone.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/")
 public class UserController {
 
     private final UserService userService;
@@ -29,47 +31,54 @@ public class UserController {
         this.userValidator = userValidator;
     }
 
+    @RequestMapping({"/","/welcome"})
+    public String welcome(User user, Model model) {
+        model.addAttribute("user", user.getUsername());
+        return "welcome";
+    }
+
     @GetMapping("/registration")
     public String registration(Model model) {
-        model.addAttribute("userForm", new User());
+        model.addAttribute("user", new User());
         return "registration";
     }
 
     @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
+    public String registration(@ModelAttribute("user") User user, BindingResult bindingResult) {
+        userValidator.validate(user, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "registration";
         }
 
-        userService.save(userForm);
+        userService.save(user);
 
-        securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
+        securityService.autoLogin(user.getUsername(), user.getConfirmPassword());
 
-        return "redirect:/welcome";
+        return "forward:/welcome";
     }
 
     @GetMapping("/login")
-    public String login(Model model, String error, String logout) {
-        if (error != null) {
-            model.addAttribute("error", "Username or password is incorrect.");
+    public String loginPage(@RequestParam(value = "error", required = false) String error,
+                            @RequestParam(value = "logout", required = false) String logout,
+                            Model model) {
+        String errorMessage = null;
+        if(error != null) {
+            errorMessage = "Username or Password is incorrect !!";
         }
-
-        if (logout != null) {
-            model.addAttribute("message", "Logged out successfully");
+        if(logout != null) {
+            errorMessage = "You have been successfully logged out !!";
         }
-
+        model.addAttribute("errorMessage", errorMessage);
         return "login";
     }
 
-    @GetMapping(value = {"/", "/welcome"})
-    public String welcome() {
-        return "welcome";
-    }
-
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
+    @GetMapping("/logout")
+    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/login?logout=true";
     }
 }
