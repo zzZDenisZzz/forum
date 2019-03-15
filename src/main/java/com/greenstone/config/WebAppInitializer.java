@@ -11,7 +11,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        context.register(WebConfig.class, PersistenceConfig.class, SecurityConfig.class);
+        context.register(WebConfig.class, DataConfig.class, SpringSecurityInitializer.class);
         context.setServletContext(servletContext);
 
         ServletRegistration.Dynamic dispatcher = servletContext
