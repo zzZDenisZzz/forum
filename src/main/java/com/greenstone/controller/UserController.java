@@ -32,8 +32,7 @@ public class UserController {
     }
 
     @RequestMapping({"/","/welcome"})
-    public String welcome(User user, Model model) {
-        model.addAttribute("user", user.getUsername());
+    public String welcome(Model model) {
         return "welcome";
     }
 
@@ -55,7 +54,7 @@ public class UserController {
 
         securityService.autoLogin(user.getUsername(), user.getConfirmPassword());
 
-        return "forward:/welcome";
+        return "redirect:/welcome";
     }
 
     @GetMapping("/login")
