@@ -1,0 +1,38 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #bde1ab;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .registration-form {
+        margin-top: 10%;
+    }
+
+    .register-form {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .registration-form {
+        margin-top: 10%;
+    }
+
+    .register-form {
+        margin-top: 10%;
+    }
+}
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff;
+}

@@ -16,6 +16,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}resources/css/login.css" rel="stylesheet">
 
 </head>
 
@@ -51,7 +52,6 @@
 </nav>
 
 <!-- Page Content -->
-<div class="bg-success">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -61,7 +61,6 @@
             </div>
         </div>
     </div>
-</div>
 <!-- Bootstrap core JavaScript -->
 <script src="${pageContext.request.contextPath}resources/jquery/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}resources/js/bootstrap.bundle.min.js"></script>

@@ -36,9 +36,9 @@
                     <label>Password</label>
                     <input type="password" class="form-control" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-black">Login</button>
+                <button type="submit" class="btn btn-black">Sign in</button>
                 <button type="button" class="btn btn-secondary"
-                        onclick='location.href="${pageContext.request.contextPath}/registration"'>Register
+                        onclick='location.href="${pageContext.request.contextPath}/registration"'>Sign up
                 </button>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </form>
