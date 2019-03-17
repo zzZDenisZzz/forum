@@ -1,25 +1,52 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
-<body onload='document.loginForm.username.focus();'>
-<h1>Login Form</h1>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<c:if test="${not empty errorMessage}"><div style="color:red; font-weight: bold; margin: 30px 0px;">${errorMessage}</div></c:if>
+    <title>Login Page</title>
 
-<form name='login' action="/login" method='POST'>
-    <table>
-        <tr>
-            <td>UserName:</td>
-            <td><input type='text' name='username' value=''></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type='password' name='password' /></td>
-        </tr>
-        <tr>
-            <td colspan='2'><input name="submit" type="submit" value="submit" /></td>
-        </tr>
-    </table>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-</form>
+    <!-- Bootstrap core CSS -->
+    <link href="${pageContext.request.contextPath}resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}resources/css/login.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Green Stone<br> Login Page</h2>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <%--@elvariable id="errorMessage" type="com.greenstone"--%>
+            <c:if test="${not empty errorMessage}">
+                <div class="text-danger">${errorMessage}</div>
+            </c:if>
+            <form name='login' action="${pageContext.request.contextPath}/login" method='POST'>
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" name="username" placeholder="User Name">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-black">Login</button>
+                <button type="button" class="btn btn-secondary"
+                        onclick='location.href="${pageContext.request.contextPath}/registration"'>Register
+                </button>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="${pageContext.request.contextPath}resources/jquery/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}resources/js/bootstrap.min.js"></script>
+
 </body>
 </html>
