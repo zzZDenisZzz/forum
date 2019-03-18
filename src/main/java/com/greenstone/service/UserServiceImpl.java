@@ -9,11 +9,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserDao userDao;
+    private PasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    private PasswordEncoder bCryptPasswordEncoder;
+    public UserServiceImpl(UserDao userDao, PasswordEncoder bCryptPasswordEncoder) {
+        this.userDao = userDao;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
 
     @Override
     public void save(User user) {

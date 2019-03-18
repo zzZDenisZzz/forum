@@ -11,8 +11,14 @@ import org.springframework.validation.Validator;
 @Component
 public class UserValidator implements Validator {
 
-    @Autowired
+    private static final String USERNAME = "username";
+
     private UserService userService;
+
+    @Autowired
+    public UserValidator(UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -23,13 +29,13 @@ public class UserValidator implements Validator {
     public void validate(Object o, Errors errors) {
         User user = (User) o;
 
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, USERNAME, "Required");
         if (user.getUsername().length() < 8 || user.getUsername().length() > 32) {
-            errors.rejectValue("username", "Size.userForm.username");
+            errors.rejectValue(USERNAME, "Size.userForm.username");
         }
 
         if (userService.findByUsername(user.getUsername()) != null) {
-            errors.rejectValue("username", "Duplicate.userForm.username");
+            errors.rejectValue(USERNAME, "Duplicate.userForm.username");
         }
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required");
