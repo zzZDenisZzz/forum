@@ -49,6 +49,7 @@
                 </spring:bind>
                 <button class="btn btn-lg btn-dark btn-block" type="submit">Sign up</button>
             </form:form>
+            <p>Don't have an Account? <a href="${pageContext.request.contextPath}/login"> Login Now!</a></p>
         </div>
     </div>
 </div>
