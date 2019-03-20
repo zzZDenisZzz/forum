@@ -31,9 +31,14 @@ public class UserController {
         this.userValidator = userValidator;
     }
 
-    @RequestMapping({"/", "/welcome"})
+    @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         return "welcome";
+    }
+
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        return "admin";
     }
 
     @GetMapping("/registration")
