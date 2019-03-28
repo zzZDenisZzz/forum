@@ -11,6 +11,8 @@
 
     <title>Registration</title>
 
+    <link href="${pageContext.request.contextPath}resources/css/images/favicon.ico" rel="shortcut icon"
+          type="image/x-icon">
     <link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}resources/css/registration.css" rel="stylesheet">
 </head>
