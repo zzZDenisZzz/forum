@@ -54,42 +54,29 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container-fluid" style="background-color: darkseagreen">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h1 class="mt-3">Welcome to the Green Stone</h1>
-            <p class="lead"><sec:authorize access="isAuthenticated()">
-                Ваш логин: <sec:authentication property="principal.username"/></sec:authorize></p>
+<div style="background-color: darkseagreen">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mt-3">Information</h1>
+            </div>
         </div>
     </div>
 </div>
+
 <div class="container" style="background-color:azure">
     <div class="row mt-5" style="background-color:darkseagreen">
-        <div class="col-7 mt-3 mb-3">Main category</div>
-        <div class="col-1 text-center mt-3 mb-3">Topics</div>
-        <div class="col-1 text-center mt-3 mb-3">Posts</div>
+        <div class="col-7 mt-3 mb-3">Topics</div>
+        <div class="col-1 text-center mt-3 mb-3">Replies</div>
+        <div class="col-1 text-center mt-3 mb-3">Views</div>
         <div class="col-3 mt-3 mb-3">Last post</div>
     </div>
-    <div class="row mt-3 mb-3">
-        <div class="col-1"><img src="${pageContext.request.contextPath}/resources/css/images/info.png"></div>
-        <div class="col-6"><a class="text-dark" href="/topic/information">Information</a></div>
-        <div class="col-1 text-center">1</div>
-        <div class="col-1 text-center">2</div>
-        <div class="col-3"><b>Welcome to Forum</b><br>by Admin 24.04.2019</div>
-    </div>
-    <div class="row mt-3 mb-3">
-        <div class="col-1"><img src="${pageContext.request.contextPath}/resources/css/images/world.png"></div>
-        <div class="col-6"><a class="text-dark" href="/topic/ecology">Ecology problems</a></div>
-        <div class="col-1 text-center">1</div>
-        <div class="col-1 text-center">2</div>
-        <div class="col-3"><b>Ecological Problems of Ukraine</b><br>by Denys 28.04.2019</div>
-    </div>
-    <div class="row mt-3 mb-3">
-        <div class="col-1"><img src="${pageContext.request.contextPath}/resources/css/images/user_office.png"></div>
-        <div class="col-6"><a class="text-dark" href="/topic/communication">Free communication</a></div>
-        <div class="col-1 text-center">1</div>
-        <div class="col-1 text-center">2</div>
-        <div class="col-3"><b>Car</b><br>by Admin 28.04.2019</div>
+    <div class="row">
+        <div class="col-1 mt-3 mb-3"><img src="/resources/css/images/paper.png"></div>
+        <div class="col-6 mt-3 mb-3"><a class="text-dark" href="#">Welcome to Forum</a></div>
+        <div class="col-1 text-center mt-3 mb-3">1</div>
+        <div class="col-1 text-center mt-3 mb-3">2</div>
+        <div class="col-3 mt-3 mb-3">by Admin 24.04.2019</div>
     </div>
 </div>
 <!-- Bootstrap core JavaScript -->
