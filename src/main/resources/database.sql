@@ -25,6 +25,25 @@ create table user_roles
   unique (user_id,role_id)
 );
 
+create table topic
+(
+  id serial primary key,
+  theme text not null,
+  topic_date date not null default current_date
+);
+
+create table posts
+(
+  id serial primary key,
+  theme text not null,
+  posting_date date not null default current_date,
+  topic_id int not null,
+
+  foreign key (topic_id) references topic(id),
+
+  unique (topic_id)
+);
+
 -- Insert data
 insert into users values (1,'Admin','$2a$04$8hYx7aVAiAR.wWE0UsjngeAFyu/dZm8oRRM2lgd26F4SUwOqlqjvu');
 
