@@ -77,7 +77,7 @@
 </div>
 <div class="container">
     <div class="row mt-4 flex-row-reverse">
-        <button type="button" class="btn btn-light">Add Massege</button>
+        <button type="button" class="btn btn-light">Add Message</button>
     </div>
 </div>
 <!-- Bootstrap core JavaScript -->

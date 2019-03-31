@@ -25,21 +25,23 @@ create table user_roles
   unique (user_id,role_id)
 );
 
-create table topic
+-- Table: topics
+create table topics
 (
   id serial primary key,
   theme text not null,
   topic_date timestamp(0) without time zone default now()
 );
 
+-- Table: posts
 create table posts
 (
   id serial primary key,
-  theme text not null,
+  message text not null,
   posting_date timestamp(0) without time zone default now(),
   topic_id int not null,
 
-  foreign key (topic_id) references topic(id),
+  foreign key (topic_id) references topics (id),
 
   unique (topic_id)
 );
@@ -52,4 +54,4 @@ insert into roles values (2,'ROLE_ADMIN');
 
 insert into user_roles values (1,2);
 
-insert into topic values (1, 'Welcome to the "Green Stone"');
+insert into topics values (1, 'Welcome to the "Green Stone"');
