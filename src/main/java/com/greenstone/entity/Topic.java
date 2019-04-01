@@ -6,25 +6,26 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "posts")
-public class Posts {
+@Table(name = "topics")
+public class Topic {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
-    private String message;
+    private String theme;
 
-    @Column(name = "posting_date")
-    private Date postingDate;
+    @Column(name = "topic_date")
+    private Date topicDate;
 
-    @ManyToOne
-    @JoinColumn(name = "topic_id" , nullable = false)
-    private Topics topics;
+    @OneToMany(mappedBy = "Topic")
+    private Set<Post> posts;
+
 }
