@@ -25,7 +25,6 @@ public class Topic {
     @Column(name = "topic_date")
     private Date topicDate;
 
-    @OneToMany(mappedBy = "Topic")
+    @OneToMany(mappedBy = "topic")
     private Set<Post> posts;
-
 }

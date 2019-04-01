@@ -1,4 +1,4 @@
-package com.greenstone.service;
+package com.greenstone.service.impl;
 
 import com.greenstone.dao.UserDao;
 import com.greenstone.entity.Role;

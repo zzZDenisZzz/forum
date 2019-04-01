@@ -1,9 +1,10 @@
-package com.greenstone.service;
+package com.greenstone.service.impl;
 
 import com.greenstone.dao.RoleDao;
 import com.greenstone.dao.UserDao;
 import com.greenstone.entity.Role;
 import com.greenstone.entity.User;
+import com.greenstone.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

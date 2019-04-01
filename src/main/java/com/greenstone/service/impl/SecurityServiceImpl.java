@@ -1,5 +1,6 @@
-package com.greenstone.service;
+package com.greenstone.service.impl;
 
+import com.greenstone.service.SecurityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
