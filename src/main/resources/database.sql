@@ -55,3 +55,4 @@ insert into roles values (2,'ROLE_ADMIN');
 insert into user_roles values (1,2);
 
 insert into topics values (1, 'Welcome to the "Green Stone"');
+insert into topics values (2, 'Topic Test');

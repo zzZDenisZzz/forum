@@ -72,11 +72,14 @@
         <div class="col-3 mt-3 mb-3">Last post</div>
     </div>
     <div class="row">
-        <div class="col-1 mt-3 mb-3"><img src="/resources/css/images/paper.png"></div>
-        <div class="col-6 mt-3 mb-3"><a class="text-dark" href="#">Welcome to Forum</a></div>
-        <div class="col-1 text-center mt-3 mb-3">1</div>
-        <div class="col-1 text-center mt-3 mb-3">2</div>
-        <div class="col-3 mt-3 mb-3">by Admin 24.04.2019</div>
+        <%--@elvariable id="topic" type="java.util.List"--%>
+        <c:forEach items="${topic}" var="topic">
+            <div class="col-1 mt-3 mb-3"><img src="/resources/css/images/paper.png"></div>
+            <div class="col-6 mt-3 mb-3"><a class="text-dark" href="#">${topic.theme}</a></div>
+            <div class="col-1 text-center mt-3 mb-3">1</div>
+            <div class="col-1 text-center mt-3 mb-3">2</div>
+            <div class="col-3 mt-3 mb-3">by Admin ${topic.topicDate}</div>
+        </c:forEach>
     </div>
 </div>
 <!-- Bootstrap core JavaScript -->
