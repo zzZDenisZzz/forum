@@ -27,6 +27,7 @@ public class PostController {
 
         model.addAttribute("userRole", userRole);
         model.addAttribute("username", username);
+        model.addAttribute("postId",postId);
         model.addAttribute("message", postService.findAll());
         return "posts";
     }

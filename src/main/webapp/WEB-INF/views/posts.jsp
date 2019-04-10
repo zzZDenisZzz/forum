@@ -1,3 +1,5 @@
+<%--@elvariable id="userRole" type="com.greenstone"--%>
+<%--@elvariable id="username" type="com.greenstone"--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
@@ -67,14 +69,18 @@
 </div>
 <div class="container" style="background-color:azure">
     <div class="row mt-4">
+
         <div class="col-2 mt-3 mb-3 text-center">
-            <p class="h5">Username</p>
-            <p class="h6">Role</p>
+            <p class="h5">${username}</p>
+            <p class="h6">${userRole}</p>
         </div>
-        <div class="col-10 mt-3 mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ratione nulla
-            quisquam porro consectetur, hic voluptatibus non officia neque iusto quod debitis ipsum repudiandae,
-            blanditiis natus accusamus est odit dolorem!
-        </div>
+        <%--@elvariable id="message" type="java.util.List"--%>
+        <c:forEach items="${message}" var="message">
+            <%--@elvariable id="postId" type="com.greenstone.controller"--%>
+            <c:if test="${message.id == postId}">
+                <div class="col-10 mt-3 mb-3">${message.message}</div>
+            </c:if>
+        </c:forEach>
     </div>
 </div>
 <div class="container">
