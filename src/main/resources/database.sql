@@ -56,3 +56,7 @@ insert into user_roles values (1,2);
 
 insert into topics values (1, 'Welcome to the "Green Stone"');
 insert into topics values (2, 'Topic Test');
+
+insert into posts values (1,'TEST Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ratione nulla
+            quisquam porro consectetur, hic voluptatibus non officia neque iusto quod debitis ipsum repudiandae,
+            blanditiis natus accusamus est odit dolorem!','2011-05-16 15:36:38',1);
