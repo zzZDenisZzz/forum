@@ -75,7 +75,8 @@
         <%--@elvariable id="topic" type="java.util.List"--%>
         <c:forEach items="${topic}" var="topic">
             <div class="col-1 mt-3 mb-3"><img src="/resources/css/images/paper.png"></div>
-            <div class="col-6 mt-3 mb-3"><a class="text-dark" href="#">${topic.theme}</a></div>
+            <div class="col-6 mt-3 mb-3"><a class="text-dark"
+                                            href="/topic/information/${topic.id}">${topic.theme}</a></div>
             <div class="col-1 text-center mt-3 mb-3">1</div>
             <div class="col-1 text-center mt-3 mb-3">2</div>
             <div class="col-3 mt-3 mb-3">by Admin ${topic.topicDate}</div>

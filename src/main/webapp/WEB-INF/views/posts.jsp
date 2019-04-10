@@ -2,6 +2,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +16,11 @@
 
     <title>Green Stone</title>
 
-    <link href="${pageContext.request.contextPath}resources/css/images/favicon.ico" rel="shortcut icon"
+    <link href="${contextPath}resources/css/images/favicon.ico" rel="shortcut icon"
           type="image/x-icon">
     <!-- Bootstrap core CSS -->
-    <link href="${pageContext.request.contextPath}resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}resources/css/login.css" rel="stylesheet">
+    <link href="${contextPath}resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}resources/css/login.css" rel="stylesheet">
 
 </head>
 
@@ -81,8 +83,8 @@
     </div>
 </div>
 <!-- Bootstrap core JavaScript -->
-<script src="${pageContext.request.contextPath}resources/jquery/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}resources/js/bootstrap.bundle.min.js"></script>
+<script src="${contextPath}resources/jquery/jquery.min.js"></script>
+<script src="${contextPath}resources/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
