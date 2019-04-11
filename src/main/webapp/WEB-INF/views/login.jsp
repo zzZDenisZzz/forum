@@ -9,11 +9,11 @@
 
     <title>Login Page</title>
 
-    <link href="${pageContext.request.contextPath}resources/css/images/favicon.ico" rel="shortcut icon"
+    <link href="<c:url value="/resources/css/images/favicon.ico" />" rel="shortcut icon"
           type="image/x-icon">
     <!-- Bootstrap core CSS -->
-    <link href="${pageContext.request.contextPath}resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}resources/css/login.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/login.css" />" rel="stylesheet">
 
 </head>
 <body>
@@ -47,8 +47,8 @@
         </div>
     </div>
 </div>
-<script src="${pageContext.request.contextPath}resources/jquery/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}resources/js/bootstrap.min.js"></script>
+<script src="<c:url value="/resources/jquery/jquery.min.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.bundle.min.js" />"></script>
 
 </body>
 </html>
