@@ -49,8 +49,8 @@ create table posts
 -- Insert data
 insert into users values (1,'Admin','$2a$04$8hYx7aVAiAR.wWE0UsjngeAFyu/dZm8oRRM2lgd26F4SUwOqlqjvu');
 
-insert into roles values(1,'USER');
-insert into roles values (2,'ADMIN');
+insert into roles values(1,'ROLE_USER');
+insert into roles values (2,'ROLE_ADMIN');
 
 insert into user_roles values (1,2);
 

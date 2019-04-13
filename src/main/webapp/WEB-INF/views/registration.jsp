@@ -32,7 +32,7 @@
                     <div class="form-group ${status.error ? 'has-error' : ''}">
                         <form:input type="text" class="form-control" name="username" placeholder="Username"
                                     path="username"/>
-                        <form:errors cssClass="text-danger" path="username"></form:errors>
+                        <form:errors cssClass="text-danger" path="username"/>
                     </div>
                 </spring:bind>
 
@@ -40,7 +40,7 @@
                     <div class="form-group ${status.error ? 'has-error' : ''}">
                         <form:input type="password" class="form-control" name="password" placeholder="Password"
                                     path="password"/>
-                        <form:errors cssClass="text-danger" path="password"></form:errors>
+                        <form:errors cssClass="text-danger" path="password"/>
                     </div>
                 </spring:bind>
 
@@ -49,7 +49,7 @@
                         <form:input type="password" class="form-control" name="confirmPassword"
                                     placeholder="Confirm Password"
                                     path="confirmPassword"/>
-                        <form:errors cssClass="text-danger" path="confirmPassword"></form:errors>
+                        <form:errors cssClass="text-danger" path="confirmPassword"/>
                     </div>
                 </spring:bind>
                 <button class="btn btn-lg btn-dark btn-block" type="submit">Sign up</button>
