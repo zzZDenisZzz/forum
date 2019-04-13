@@ -67,34 +67,31 @@
     </div>
 </div>
 
-<div class="container" style="background-color:azure">
-    <div class="row shadow mt-4">
-        <div class="col-2 mt-3 mb-3 text-center border-right border-dark">
-            <p class="h5">${username}</p>
-            <p class="h6">${userRole}</p>
+<%--@elvariable id="message" type="java.util.List"--%>
+<c:forEach items="${message}" var="message">
+    <div class="container" style="background-color:azure">
+        <div class="row shadow mt-4">
+            <div class="col-2 mt-3 mb-3 text-center border-right border-dark">
+                <p class="h5">${username}</p>
+                <p class="h6">${userRole}</p>
+            </div>
+            <div class="col-10 mt-3 mb-3">${message.message}<br><br>
+                <p class="text-right">${message.postingDate}</p>
+            </div>
         </div>
-        <%--@elvariable id="message" type="java.util.List"--%>
-        <c:forEach items="${message}" var="message">
-            <%--@elvariable id="postId" type="com.greenstone.controller"--%>
-            <c:if test="${message.id == postId}">
-                <div class="col-10 mt-3 mb-3">${message.message}<br><br>
-                    <p class="text-right">${message.postingDate}</p>
-                </div>
-            </c:if>
-        </c:forEach>
     </div>
-</div>
+</c:forEach>
 
 <div class="container mt-5">
     <%--@elvariable id="newPost" type="com.greenstone"--%>
     <form:form action="/topic/information" modelAttribute="newPost" method='POST'>
-    <div class="row mt-4">
-        <label>Comment:</label>
-        <form:textarea class="form-control shadow" name="message" path="message"/>
-    </div>
-    <div class="row mt-4 flex-row-reverse">
-        <button type="submit" class="shadow btn btn-light">Add Message</button>
-    </div>
+        <div class="row mt-4">
+            <label>Comment:</label>
+            <form:textarea class="form-control shadow" name="message" path="message"/>
+        </div>
+        <div class="row mt-4 flex-row-reverse">
+            <button type="submit" class="shadow btn btn-light">Add Message</button>
+        </div>
     </form:form>
 </div>
 

@@ -41,9 +41,7 @@ create table posts
   posting_date timestamp(0) without time zone default now(),
   topic_id int not null,
 
-  foreign key (topic_id) references topics(id),
-
-  unique (topic_id)
+  foreign key (topic_id) references topics(id)
 );
 
 -- Insert data
@@ -61,4 +59,4 @@ insert into posts values (1,'TEST Lorem ipsum dolor sit amet, consectetur adipis
             quisquam porro consectetur, hic voluptatibus non officia neque iusto quod debitis ipsum repudiandae,
             blanditiis natus accusamus est odit dolorem!','2011-05-16 15:36:38',1);
 
-insert into posts values (2,'TEST Lorem ip odit dolorem!','2011-05-16 18:36:38',2);
+insert into posts values (2,'TEST Lorem ip odit dolorem!','2011-05-16 18:36:38',1);
