@@ -22,7 +22,7 @@
         <spring-security-taglibs.version>5.0.7.RELEASE</spring-security-taglibs.version>
         <spring-data-jpa.version>2.1.5.RELEASE</spring-data-jpa.version>
         <hibernate.version>5.4.1.Final</hibernate.version>
-        <hibernate-validator.version>6.0.15.Final</hibernate-validator.version>
+        <hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
         <postgres.version>42.2.5</postgres.version>
         <lombok.version>1.18.2</lombok.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
